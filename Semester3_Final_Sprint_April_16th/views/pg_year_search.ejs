@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="lost content">
+        <h1>PG Census Year Search</h1><br>
+<% if (messages.error) { %>
+<%= messages.error %>
+<% } %>
+   
+
+
+<form class="example" action="/pg_year_search/pg_year_results"  method="GET">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i>Search</button>
+</form>
+<button><a class="example" href="/pg_census">&#8592 Back</a></button>
+
+<br>
+<br>
+<%- include('./partials/footer.ejs') %>

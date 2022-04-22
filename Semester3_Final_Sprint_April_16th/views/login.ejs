@@ -1,0 +1,27 @@
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="lost content">
+            <h1>Login</h1><br>
+<% if (messages.error) { %>
+    <%= messages.error %>
+<% } %>
+<form class="text" action="/login" method="POST">
+    <div> 
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div><br>
+    <div> 
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div><br>
+
+    <div><button id="gin" type="submit">Login</button></div><br>
+
+     <div><button id="gin"><a class="text" href="/register">Register</a></button></div> 
+    </form>  
+    </body>
+    <%- include('./partials/footer.ejs') %>
+</html>
+

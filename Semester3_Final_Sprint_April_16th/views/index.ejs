@@ -1,0 +1,20 @@
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="lost content">
+          <h1>Please Choose a Database to Search </h1><br>
+        
+          <button id="one"><a id="line" href="/pg_census">Postgres Database</a></button><br><br>
+          <button id="two"><a id="line" href="/mongo_census">Mongo Database</a></button>
+          <form action="/logout?_method=DELETE" method="POST"></br>
+            <button id="gin" type="submit">Logout</button>
+          </form>
+          
+        </div>
+    </body>
+    <%- include('./partials/footer.ejs') %>
+</html>
+
+
+

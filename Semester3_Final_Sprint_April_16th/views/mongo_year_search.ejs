@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="lost content">
+        <h1>Mongo Census Year Search</h1><br>
+<% if (messages.error) { %>
+<%= messages.error %>
+<% } %>
+   
+
+
+<form class="example" action="/mongo_year_search/search"  method="GET">
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i>Search</button>
+</form>
+<button><a class="example" href="/">&#8592 Back</a></button>
+
+  
+</body>
+<br>
+<br>
+<%- include('./partials/footer.ejs') %>

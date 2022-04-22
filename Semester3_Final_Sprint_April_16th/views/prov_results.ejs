@@ -1,0 +1,24 @@
+<html lang="en">
+    <%- include('./partials/header.ejs') %>
+<body> 
+  <%- include('./partials/nav.ejs') %>
+  
+  <div>
+    <h1>Pg Database Province Results</h1>  <br>
+      <% if (allCensus) { %> 
+        <% allCensus.forEach(census => { %>
+      <p class="boxed-results">
+          <b><%= census.province%> :</b><br>  Family Name : <b><%= census.family_name%></b>, <%= census.household_id%>, Census Year : <b><%= census.census_year%></b>,
+           <%= census.parent1_first_name%>, <%= census.parent1_date_of_birth%>, <%= census.parent1_gender%>,
+           <%= census.parent2_first_name%>, <%= census.parent2_date_of_birth%>, <%= census.parent2_gender%>,
+           <%= census.child_name%>, <%= census.child_date_of_birth%>, <%= census.child_gender%>,
+           <%= census.address%>, <%= census.phone_number%>, <%= census.household_income%>
+     </p> <br/>
+      <% }) %> <% } %></p> <br/>
+    </div> 
+    <button><a class="example" href="/prov_search">Back to PG Search Menu</a></button>
+    <button><a class="example" href="/pg_census">Back to Database Menu</a></button>
+    <button><a class="example" href="/">Back to Database Choices</a></button>
+</body>
+  <%- include('./partials/footer.ejs') %>
+</html>

@@ -1,0 +1,29 @@
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="lost content">
+      <h1>Mongo Database</h1><br>
+      <div class="dropdown">
+          <button class="dropbtn">Search Database</button>
+          <div class="dropdown-content"> 
+
+             <a id="line" href="/mongo_search">Family_name</a>
+             <a id="line" href="/mongo_prov">Province</a>
+             <a id="line" href="/mongo_year_search">Census Year</a>     
+          </div>         
+        </div>
+    <br><br>
+    <div> <h2>Please Logout When Finished</h2><br>
+      <form action="/logout?_method=DELETE" method="POST">
+        <button id="gin" type="submit">Logout</button>
+       
+      </form>
+      <br> <button  id="gin"><a class="example" href="/">&#8592 Back</a></button>
+    </div>
+</div>
+  </body>
+ <html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+</html>

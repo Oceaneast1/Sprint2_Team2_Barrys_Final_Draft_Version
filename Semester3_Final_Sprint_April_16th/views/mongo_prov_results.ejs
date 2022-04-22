@@ -1,0 +1,28 @@
+
+<html lang="en">
+    <%- include('./partials/header.ejs') %>   
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <h1> Mongo Province Database Results</h1><br> 
+            <div>
+            <% if (results.length > 0) { %>
+                <% results.forEach(census => { %>
+                    <p class="boxed-results-mg">
+                        <b><%= census.province%> : </b><br>
+                        FAMILY : <b><%= census.family_name%></b>, <%= census.household_id%>, Census Year: <b> <%= census.census_year%></b>,
+                      <%= census.parent1_first_name%>, <%= census.parent1.date_of_birth%>, <%= census.parent1.gender%>,
+                      <%= census.parent2_first_name%>, <%= census.parent2.date_of_birth%>, <%= census.parent2.gender%>,
+                       <% for(var i=0; i < census.child.length; i++) { %>
+                        <%= census.child[i].name %>, <%= census.child[i].date_of_birth %>, <%= census.child[i].gender  %>
+                        <% } %> 
+                      <%= census.address%>,  <%= census.phone_number%>, <%= census.household_income%>
+                    </p><br> 
+                    <% }) %> <% } %>
+            </div>
+                <button><a class="example" href="/mongo_prov">Back to Mongo Search Menu</a></button>
+                <button><a class="example" href="/mongo_census">Back to Database Menu</a></button>
+               <button><a class="example" href="/">Back to Database Choices</a></button>
+            
+    </body>
+    <%- include('./partials/footer.ejs') %>
+</html>

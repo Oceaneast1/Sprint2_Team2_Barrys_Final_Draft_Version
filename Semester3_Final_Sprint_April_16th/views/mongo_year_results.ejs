@@ -1,0 +1,35 @@
+<html lang="en">
+  <%- include('./partials/header.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="search content">
+      
+      <h1>Mongo Census Year Database Results</h1><br>
+      <% if (results) { %> <% results.forEach(census => { %>
+      <p class="boxed-results">
+         <b><%= census.census_year%> : </b> <br> FAMILY : <b><%= census.family_name%></b>, <%= census.household_id%>, 
+         <%= census.parent1_first_name%>, 
+        <%= census.parent1.date_of_birth%>, <%= census.parent1.gender%>, 
+        <%= census.parent2_first_name%>, <%= census.parent2.date_of_birth%>, 
+        <%= census.parent2.gender%>, 
+        <% for(var i=0; i < census.child.length; i++) { %> 
+          <%= census.child[i].name %>, 
+          <%=census.child[i].date_of_birth %>, 
+          <%= census.child[i].gender %>, 
+        <% } %> 
+        <%=census.address%>, 
+        Province : <b><%= census.province%></b>, <%= census.phone_number%>, 
+        <%= census.household_income%>
+      </p>
+      <br />
+      <% }) %> <% } %>
+    
+          <button><a class="example" href="/mongo_year_search">Back to Mongo Search Menu</a></button>
+          <button><a class="example" href="/mongo_census">Back to Database Menu </a></button>
+          <button><a class="example" href="/">Back to Database Choices</a></button>
+     </div>     
+  </body>
+  <%- include('./partials/footer.ejs') %>
+</html>
+
+
